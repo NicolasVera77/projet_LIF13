@@ -9,22 +9,22 @@ public Class Point
 		this.y = y;
 	}
 
-	public getX()
+	public int getX()
 	{
 		return this.x;
 	}
 
-	public setX(int x)
+	public void setX(int x)
 	{
 		this.x = x;
 	}
 
-	public getY()
+	public int getY()
 	{
 		return this.y;
 	}
 
-	public setY(int y)
+	public void setY(int y)
 	{
 		this.y = y;
 	}
