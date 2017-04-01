@@ -6,8 +6,6 @@ public class Cavalier extends Piece
 	
 	public Cavalier(String couleur)
 	{
-		Piece("Cavalier", couleur);
-
-		
+		Piece("Cavalier", couleur);	
 	}
 }
