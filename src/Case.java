@@ -22,7 +22,7 @@ public Class Case
 		this.piece = p; 
 	}
 
-	public boolean estOccupe(Piece p)
+	public boolean estOccupe()
 	{
 		if(this.p != null)
 		{
@@ -31,6 +31,22 @@ public Class Case
 		else
 		{
 			return false;
+		}
+	}
+
+	public boolean estOccuper(String couleur)
+	{
+		if(this.p == null)
+		{
+			return false;
+		}
+		else if(this.p.getCouleur().equals(couleur))
+		{
+			return true;
+		} 
+		else
+		{
+			return false; 
 		}
 	}
 }
