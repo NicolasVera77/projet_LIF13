@@ -5,10 +5,6 @@ public abstract Class Piece
 	private String nom;
 	private String couleur;
 
-	// private Point position;
-	// private int distance;
-	// private int direction;
-
 	public Piece(String nom, String couleur)
 	{
 		this.nom = nom;
