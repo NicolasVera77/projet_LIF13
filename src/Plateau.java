@@ -6,7 +6,8 @@ public class Plateau
 
 	public Plateau()
 	{
-		echiquier = Case[LIGNE][COLONNE];
+		echiquier = new Case[LIGNE][COLONNE];
+		
 		for(int i=0; i<LIGNE; i++)
 		{
 			for(int j=0; j<COLONNE; j++)
@@ -16,7 +17,7 @@ public class Plateau
 		}
 	}
 
-	public initialisation()
+	public void initialisation()
 	{
 		for(int i=0; i<COLONNE; i++)
 		{

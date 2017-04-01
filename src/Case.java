@@ -1,4 +1,4 @@
-public Class Case
+public class Case
 {
 	private Piece piece;
 
@@ -14,7 +14,7 @@ public Class Case
 
 	public Piece getCase()
 	{
-		return this.p
+		return this.piece;
 	}
 
 	public void setCase(Piece p)
@@ -24,7 +24,7 @@ public Class Case
 
 	public boolean estOccupe()
 	{
-		if(this.p != null)
+		if(this.piece != null)
 		{
 			return true;
 		}
@@ -36,11 +36,11 @@ public Class Case
 
 	public boolean estOccuper(String couleur)
 	{
-		if(this.p == null)
+		if(this.piece == null)
 		{
 			return false;
 		}
-		else if(this.p.getCouleur().equals(couleur))
+		else if(this.piece.getCouleur().equals(couleur))
 		{
 			return true;
 		} 

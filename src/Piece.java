@@ -1,4 +1,4 @@
-public abstract Class Piece
+public abstract class Piece
 {
 
 	private boolean vivante;
@@ -39,7 +39,7 @@ public abstract Class Piece
 
 	public void setVivante(boolean vivante)
 	{
-		this.vivante = vivante
+		this.vivante = vivante;
 	}
 
 }
