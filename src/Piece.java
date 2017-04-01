@@ -1,4 +1,5 @@
-public abstract Class Piece {
+public abstract Class Piece
+{
 
 	private boolean vivante;
 	private String nom;
@@ -8,33 +9,40 @@ public abstract Class Piece {
 	// private int distance;
 	// private int direction;
 
-	public Piece(String nom, String couleur){
+	public Piece(String nom, String couleur)
+	{
 		this.nom = nom;
 		this.couleur = couleur;
 		this.vivante = true;
 	}
 
-	public String getNom(){
+	public String getNom()
+	{
 		return this.nom;
 	}
 
-	public void setNom(String nom){
+	public void setNom(String nom)
+	{
 		this.nom = nom;
 	}
 
-	public String getCouleur(){
+	public String getCouleur()
+	{
 		return this.couleur;
 	}
 
-	public void setCouleur(String couleur){
+	public void setCouleur(String couleur)
+	{
 		this.couleur = couleur;
 	}
 
-	public boolean getVivante(){
+	public boolean getVivante()
+	{
 		return this.vivante;
 	}
 
-	public void setVivante(boolean vivante){
+	public void setVivante(boolean vivante)
+	{
 		this.vivante = vivante
 	}
 
