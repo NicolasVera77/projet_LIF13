@@ -1,10 +1,10 @@
 CC = javac
 options = -g
 .SUFFIXES: .java .class
-executable = 
+bin = ../bin
 
 .java.class:
-	$(CC) $(objets) $*.java
+	$(CC) -d $(bin) $(objets) $*.java
 
 CLASSES = \
 		Coup.java \
@@ -26,4 +26,4 @@ default: classes
 classes: $(CLASSES:.java=.class)
 
 clean:
-	rm -rf *.class
+	rm -rf ../bin/*.class
