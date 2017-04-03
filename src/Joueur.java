@@ -5,7 +5,7 @@ public class Joueur
 	public Joueur(int id, String couleur)
 	{
 		this.id = id;
-		//this.couleur = couleur;
+		this.couleur = couleur;
 	}
 
 
