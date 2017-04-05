@@ -1,6 +1,7 @@
 public class Joueur
 {
 	private int id;
+	private String couleur;
 
 	public Joueur(int id, String couleur)
 	{
@@ -8,5 +9,13 @@ public class Joueur
 		this.couleur = couleur;
 	}
 
+	public int getID()
+	{
+		return id;
+	}
 
+	public void setID(int id)
+	{
+		this.id = id;
+	}
 }

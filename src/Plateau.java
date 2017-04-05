@@ -21,30 +21,30 @@ public class Plateau
 	{
 		for(int i=0; i<COLONNE; i++)
 		{
-			this.echiquier[1][i].setPiece(new Pion("noir"));
+			this.echiquier[1][i].setCase(new Pion("noir"));
 		}
 
-		this.echiquier[0][0].setPiece(new Tour("noir"));
-		this.echiquier[0][7].setPiece(new Tour("noir"));
-		this.echiquier[0][1].setPiece(new Cavalier("noir"));
-		this.echiquier[0][6].setPiece(new Cavalier("noir"));
-		this.echiquier[0][2].setPiece(new Fou("noir"));
-		this.echiquier[0][5].setPiece(new Fou("noir"));
-		this.echiquier[0][3].setPiece(new Dame("noir"));
-		this.echiquier[0][4].setPiece(new Roi("noir"));
+		this.echiquier[0][0].setCase(new Tour("noir"));
+		this.echiquier[0][7].setCase(new Tour("noir"));
+		this.echiquier[0][1].setCase(new Cavalier("noir"));
+		this.echiquier[0][6].setCase(new Cavalier("noir"));
+		this.echiquier[0][2].setCase(new Fou("noir"));
+		this.echiquier[0][5].setCase(new Fou("noir"));
+		this.echiquier[0][3].setCase(new Reine("noir"));
+		this.echiquier[0][4].setCase(new Roi("noir"));
 
 		for(int i=0; i<COLONNE; i++)
 		{
-			this.echiquier[LIGNE-2][i].setPiece(new Pion("blanc"));
+			this.echiquier[LIGNE-2][i].setCase(new Pion("blanc"));
 		}
 
-		this.echiquier[7][0].setPiece(new Tour("blanc"));
-		this.echiquier[7][7].setPiece(new Tour("blanc"));
-		this.echiquier[7][1].setPiece(new Cavalier("blanc"));
-		this.echiquier[7][6].setPiece(new Cavalier("blanc"));
-		this.echiquier[7][2].setPiece(new Fou("blanc"));
-		this.echiquier[7][5].setPiece(new Fou("blanc"));
-		this.echiquier[7][3].setPiece(new Dame("blanc"));
-		this.echiquier[7][4].setPiece(new Roi("blanc"));
+		this.echiquier[7][0].setCase(new Tour("blanc"));
+		this.echiquier[7][7].setCase(new Tour("blanc"));
+		this.echiquier[7][1].setCase(new Cavalier("blanc"));
+		this.echiquier[7][6].setCase(new Cavalier("blanc"));
+		this.echiquier[7][2].setCase(new Fou("blanc"));
+		this.echiquier[7][5].setCase(new Fou("blanc"));
+		this.echiquier[7][3].setCase(new Reine("blanc"));
+		this.echiquier[7][4].setCase(new Roi("blanc"));
 	}
 }
