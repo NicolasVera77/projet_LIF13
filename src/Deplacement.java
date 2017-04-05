@@ -32,4 +32,16 @@ public class Deplacement
 	{
 		return this.arrive;
 	}
+
+	public boolean estNul()
+	{
+		if(this.deplacementX == 0 && this.deplacementY == 0)
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
 }

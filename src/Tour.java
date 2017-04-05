@@ -7,7 +7,7 @@ public class Tour extends Piece
 
 	public boolean deplacementPossible(Deplacement deplacement)
 	{
-		if(deplacement.getDeplacementX() != 0 || deplacement.getDeplacementY()!=0)
+		if(!deplacement.estNul())
 		{
 			if(deplacement.getDeplacementX() == 0 || deplacement.getDeplacementY()==0)
 			{
