@@ -47,5 +47,13 @@ public class Plateau
 		this.echiquier[7][3].setPiece(new Reine("blanc"));
 		this.echiquier[7][4].setPiece(new Roi("blanc"));
 	}
+
+	public void seDeplacer(Deplacement deplacement)
+	{
+		if(this.echiquier[deplacement.depart.getX()][deplacement.depart.getY()].getPiece().deplacementPossible(deplacement))
+		{
+			
+		}
+	}
 }
 
