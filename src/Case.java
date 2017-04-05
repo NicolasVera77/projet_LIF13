@@ -12,12 +12,12 @@ public class Case
 		this.piece = p;
 	}
 
-	public Piece getCase()
+	public Piece getPiece()
 	{
 		return this.piece;
 	}
 
-	public void setCase(Piece p)
+	public void setPiece(Piece p)
 	{
 		this.piece = p; 
 	}
