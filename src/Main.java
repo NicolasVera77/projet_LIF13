@@ -17,12 +17,12 @@ public class Main extends Application
 	@Override
 	public void start(Stage primaryStage)
 	{
-		primaryStage.setTitle("Hello World");
+		primaryStage.setTitle("Jeu d'échecs");
 
 		Group root = new Group();
-		Scene scene = new Scene(root, 300, 250, Color.LIGHTGREEN);
-		Button btn = new Button();
+		Scene scene = new Scene(root, 1000, 1000, Color.WHITE);
 
+		Button btn = new Button();
 		btn.setLayoutX(100);
 		btn.setLayoutY(80);
 		btn.setText("Hello World");
