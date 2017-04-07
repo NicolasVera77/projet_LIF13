@@ -38,9 +38,11 @@ public class Main extends Application
 	@Override
 	public void start(Stage primaryStage) 
 	{
+		primaryStage.setTitle("Jeu d'échecs");
 		Group root = new Group();
-        Scene scene = new Scene(root, WINDOW_WIDTH, WINDOW_HEIGHT, Color.LIGHTBLUE);
+        Scene scene = new Scene(root, WINDOW_WIDTH, WINDOW_HEIGHT, Color.WHITE);
         GridPane gPane = new GridPane();
+
 
         //gPane.setPrefSize(1000,1000);
 
@@ -56,10 +58,23 @@ public class Main extends Application
         		gPane.getColumnConstraints().add(column);
 
         		Button b = new Button();
+
         		b.setMaxWidth(100);
         		b.setMinWidth(100);
         		b.setMaxHeight(100);
         		b.setMinHeight(100);
+        	
+
+        		if((i+j)%2==0)
+        		{
+        			b.setStyle("-fx-background-color: #ffffff;");
+        		}
+        		else
+        		{
+        			b.setStyle("-fx-background-color: #000000;");
+
+        		}
+        		
         		gPane.add(b, i, j);
         	}
         }
