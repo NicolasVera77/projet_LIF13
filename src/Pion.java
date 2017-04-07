@@ -12,14 +12,14 @@ public class Pion extends Piece
 	{
 		if(!deplacement.estNul())
 		{
-			if(this.couleur == "blanc")
+			if(this.getCouleur() == "blanc")
 			{
-				if(deplacement.depart.getX()==6 && this.debut == true)
+				if(deplacement.getDepart().getX()==6 && this.debut == true)
 				{
-					if((deplacement.deplacementX() == 0) && (deplacement.deplacementY() == -1 || deplacement.deplacementY == -2))
+					if((deplacement.getDeplacementX() == 0) && (deplacement.getDeplacementY() == -1 || deplacement.getDeplacementY() == -2))
 					{
-						return true;
 						this.debut = false;
+						return true;						
 					}
 					else 
 					{
@@ -28,7 +28,7 @@ public class Pion extends Piece
 				}
 				else
 				{
-					if((deplacement.deplacementX() == 0) && (deplacement.deplacementY() == -1)
+					if((deplacement.getDeplacementX() == 0) && (deplacement.getDeplacementY() == -1))
 					{
 						return true;
 					}
@@ -38,14 +38,14 @@ public class Pion extends Piece
 					}
 				}
 			}
-			else if(this.couleur == "noir")
+			else if(this.getCouleur() == "noir")
 			{
-				if(deplacement.depart.getX()==1 && this.debut == true)
+				if(deplacement.getDepart().getX()==1 && this.debut == true)
 				{
-					if((deplacement.deplacementX() == 0) && (deplacement.deplacementY() <= 2))
+					if((deplacement.getDeplacementX() == 0) && (deplacement.getDeplacementY() <= 2))
 					{
-						return true;
 						this.debut = false;
+						return true;						
 					}
 					else 
 					{
@@ -54,7 +54,7 @@ public class Pion extends Piece
 				}
 				else
 				{
-					if((deplacement.deplacementX() == 0) && (deplacement.deplacementY() == 1)
+					if((deplacement.getDeplacementX() == 0) && (deplacement.getDeplacementY() == 1))
 					{
 						return true;
 					}
@@ -69,5 +69,7 @@ public class Pion extends Piece
 		{
 			return false;
 		}
+		
+		return false;
 	}
 }

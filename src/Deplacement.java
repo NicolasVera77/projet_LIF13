@@ -30,7 +30,7 @@ public class Deplacement
 
 	public Point getArrive()
 	{
-		return this.arrive;
+		return this.arrivee;
 	}
 
 	public boolean estNul()

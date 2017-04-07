@@ -50,7 +50,7 @@ public class Plateau
 
 	public void seDeplacer(Deplacement deplacement)
 	{
-		if(this.echiquier[deplacement.depart.getX()][deplacement.depart.getY()].getPiece().deplacementPossible(deplacement))
+		if(this.echiquier[deplacement.getDepart().getX()][deplacement.getDepart().getY()].getPiece().deplacementPossible(deplacement))
 		{
 			
 		}

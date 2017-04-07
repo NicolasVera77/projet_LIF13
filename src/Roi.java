@@ -11,7 +11,7 @@ public class Roi extends Piece
 	{
 		if(!deplacement.estNul())
 		{
-			if((Math.abs(deplacement.getDeplacementX()) == 1 && Math.abs(deplacement.getDeplacementY()) == 0) || (Math.abs(deplacement.getDeplacementX()) == 0 && Math.abs(deplacement.getDeplacementY()) == 1)(Math.abs(deplacement.getDeplacementX()) == 1 && Math.abs(deplacement.getDeplacementY()) == 1))
+			if((Math.abs(deplacement.getDeplacementX()) == 1 && Math.abs(deplacement.getDeplacementY()) == 0) || (Math.abs(deplacement.getDeplacementX()) == 0 && Math.abs(deplacement.getDeplacementY()) == 1) || (Math.abs(deplacement.getDeplacementX()) == 1 && Math.abs(deplacement.getDeplacementY()) == 1))
 			{
 				return true;
 			}

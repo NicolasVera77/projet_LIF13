@@ -48,5 +48,5 @@ public abstract class Piece
 		this.vivante = vivante;
 	}
 
-	public abstract boolean deplacementPossible();
+	public abstract boolean deplacementPossible(Deplacement deplacement);
 }
