@@ -143,7 +143,7 @@ public class Main extends Application
                 {
                     if(n.getBoundsInParent().contains(me.getSceneX(),me.getSceneY()))
                     {
-                        n.setStyle("-fx-background-color: #FF0000");
+                        n.setStyle("-fx-border-color: #FF0000");
                         //gPane[GridPane.getRowIndex(n)][GridPane.getColumnIndex(n)].setStyle("-fx-border-color: #444444");
 
                         for(Node n2 : gPane.getChildren())

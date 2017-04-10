@@ -27,7 +27,7 @@ public class Pion extends Piece
 			{
 				if(deplacement.getDepart().getX() == 6 && this.debut == true)
 				{
-					if((deplacement.getDeplacementX() == 0) && (deplacement.getDeplacementY() == -1 || deplacement.getDeplacementY() == -2))
+					if((deplacement.getDeplacementY() == 0) && (deplacement.getDeplacementX() == -1 || deplacement.getDeplacementX() == -2))
 					{
 						this.debut = false;
 						return true;					
@@ -39,7 +39,7 @@ public class Pion extends Piece
 				}
 				else
 				{
-					if((deplacement.getDeplacementX() == 0) && (deplacement.getDeplacementY() == -1))
+					if((deplacement.getDeplacementY() == 0) && (deplacement.getDeplacementX() == -1))
 					{
 						return true;
 					}
@@ -53,7 +53,7 @@ public class Pion extends Piece
 			{
 				if(deplacement.getDepart().getX() == 1 && this.debut == true)
 				{
-					if((deplacement.getDeplacementX() == 0) && (deplacement.getDeplacementY() <= 2))
+					if((deplacement.getDeplacementY() == 0) && (deplacement.getDeplacementX() <= 2))
 					{
 						this.debut = false;
 						return true;						
@@ -65,7 +65,7 @@ public class Pion extends Piece
 				}
 				else
 				{
-					if((deplacement.getDeplacementX() == 0) && (deplacement.getDeplacementY() == 1))
+					if((deplacement.getDeplacementY() == 0) && (deplacement.getDeplacementX() == 1))
 					{
 						return true;
 					}
@@ -80,6 +80,8 @@ public class Pion extends Piece
 		{
 			return false;
 		}
+		
+		return false;
 	}
 
 	public String getChemin()
