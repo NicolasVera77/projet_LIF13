@@ -24,6 +24,11 @@ import javafx.scene.text.TextAlignment;
 import javafx.scene.layout.Region;
 import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.RowConstraints;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.HBox;
+
+//make clean && make && cd bin && java Main && cd ..
 
 public class Main extends Application
 {
@@ -42,9 +47,6 @@ public class Main extends Application
 		Group root = new Group();
         Scene scene = new Scene(root, WINDOW_WIDTH, WINDOW_HEIGHT, Color.WHITE);
         GridPane gPane = new GridPane();
-
-
-        //gPane.setPrefSize(1000,1000);
 
         for (int i=0; i<8; i++)
         {
@@ -71,13 +73,102 @@ public class Main extends Application
         		}
         		else
         		{
-        			b.setStyle("-fx-background-color: #000000;");
+        			b.setStyle("-fx-background-color: #87591A;");
 
         		}
-        		
+
+                if(j==0)
+                {
+                    Image image = new Image("file:../img/TN.gif");
+
+                    if((i==0) || (i==7))
+                    {
+                        image = new Image("file:../img/TN.gif");
+                    }
+                    else if((i==1) || (i==6))
+                    {
+                        image = new Image("file:../img/CN.gif");
+                    }
+                    else if((i==2) || (i==5))
+                    {
+                        image = new Image("file:../img/FN.gif");
+                    }
+                    else if(i==3)
+                    {
+                        image = new Image("file:../img/DN.gif");
+                    }
+                    else if(i==4)
+                    {
+                        image = new Image("file:../img/RN.gif");
+                    }
+
+                    ImageView iv1 = new ImageView();
+                    iv1.setImage(image);
+                    /*iv1.setFitWidth(100);
+                    iv1.setPreserveRatio(true);*/
+
+                    b.setGraphic(iv1);
+                }
+                else if(j==7)
+                {
+                    Image image = new Image("file:../img/TN.gif");
+
+                    if((i==0) || (i==7))
+                    {
+                        image = new Image("file:../img/TB.gif");
+                    }
+                    else if((i==1) || (i==6))
+                    {
+                        image = new Image("file:../img/CB.gif");
+                    }
+                    else if((i==2) || (i==5))
+                    {
+                        image = new Image("file:../img/FB.gif");
+                    }
+                    else if(i==3)
+                    {
+                        image = new Image("file:../img/DB.gif");
+                    }
+                    else if(i==4)
+                    {
+                        image = new Image("file:../img/RB.gif");
+                    }
+
+                    ImageView iv1 = new ImageView();
+                    iv1.setImage(image);
+                    /*iv1.setFitWidth(100);
+                    iv1.setPreserveRatio(true);*/
+
+                    b.setGraphic(iv1);
+                }
+                else if(j==1)
+                {
+                    Image image = new Image("file:../img/PN.gif");
+
+                    ImageView iv1 = new ImageView();
+                    iv1.setImage(image);
+                    /*iv1.setFitWidth(100);
+                    iv1.setPreserveRatio(true);*/
+
+                    b.setGraphic(iv1);
+                }
+                else if(j==6)
+                {
+                    Image image = new Image("file:../img/PB.gif");
+
+                    ImageView iv1 = new ImageView();
+                    iv1.setImage(image);
+                    /*iv1.setFitWidth(100);
+                    iv1.setPreserveRatio(true);*/
+
+                    b.setGraphic(iv1);
+                }
+
         		gPane.add(b, i, j);
         	}
         }
+
+        // gPane.b.setGraphic(iv1);
 
         gPane.setPrefSize(WINDOW_WIDTH, WINDOW_HEIGHT);
         gPane.setMinSize(Region.USE_COMPUTED_SIZE, Region.USE_COMPUTED_SIZE);
