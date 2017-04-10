@@ -38,6 +38,22 @@ public class Main extends Application
 	public static void main(String[] args)
 	{
 		Application.launch(Main.class, args);
+
+        /*Plateau p = new Plateau();
+        p.initialisation();
+
+        System.out.println(p.getEchiquier(0, 0).getPiece().getChemin());
+        //System.out.println(p.getEchiquier(4, 4).getPiece().getChemin());
+
+
+        Deplacement d = new Deplacement(new Point(0, 0), new Point(4,4));
+        p.seDeplacer(d);
+
+        System.out.println(p.getEchiquier(0, 0).getPiece().getChemin());*/
+        //System.out.println(p.getEchiquier(4, 4).getPiece().getChemin());
+
+
+        //System.out.println(p.getEchiquier(0, 0).getPiece().getChemin());
 	}
 
 	@Override
@@ -48,125 +64,15 @@ public class Main extends Application
         Scene scene = new Scene(root, WINDOW_WIDTH, WINDOW_HEIGHT, Color.WHITE);
         GridPane gPane = new GridPane();
 
-        for (int i=0; i<8; i++)
-        {
-        	// RowConstraints row = new RowConstraints();
-    		// row.setPercentHeight(50);
-    		// gPane.getRowConstraints().add(row);
-        	for (int j=0; j<8; j++)
-        	{
-        		ColumnConstraints column = new ColumnConstraints();
-        		column.setPercentWidth(100);
-        		gPane.getColumnConstraints().add(column);
+        Plateau p = new Plateau();
+        p.initialisation();
 
-        		Button b = new Button();
+        affichage(gPane, p);
 
-        		b.setMaxWidth(100);
-        		b.setMinWidth(100);
-        		b.setMaxHeight(100);
-        		b.setMinHeight(100);
-        	
+        Deplacement d = new Deplacement(new Point(4, 4), new Point(0,0));
+        p.seDeplacer(d);
 
-        		if((i+j)%2==0)
-        		{
-        			b.setStyle("-fx-background-color: #ffffff;");
-        		}
-        		else
-        		{
-        			b.setStyle("-fx-background-color: #87591A;");
-
-        		}
-
-                if(j==0)
-                {
-                    Image image = new Image("file:../img/TN.gif");
-
-                    if((i==0) || (i==7))
-                    {
-                        image = new Image("file:../img/TN.gif");
-                    }
-                    else if((i==1) || (i==6))
-                    {
-                        image = new Image("file:../img/CN.gif");
-                    }
-                    else if((i==2) || (i==5))
-                    {
-                        image = new Image("file:../img/FN.gif");
-                    }
-                    else if(i==3)
-                    {
-                        image = new Image("file:../img/DN.gif");
-                    }
-                    else if(i==4)
-                    {
-                        image = new Image("file:../img/RN.gif");
-                    }
-
-                    ImageView iv1 = new ImageView();
-                    iv1.setImage(image);
-                    /*iv1.setFitWidth(100);
-                    iv1.setPreserveRatio(true);*/
-
-                    b.setGraphic(iv1);
-                }
-                else if(j==7)
-                {
-                    Image image = new Image("file:../img/TN.gif");
-
-                    if((i==0) || (i==7))
-                    {
-                        image = new Image("file:../img/TB.gif");
-                    }
-                    else if((i==1) || (i==6))
-                    {
-                        image = new Image("file:../img/CB.gif");
-                    }
-                    else if((i==2) || (i==5))
-                    {
-                        image = new Image("file:../img/FB.gif");
-                    }
-                    else if(i==3)
-                    {
-                        image = new Image("file:../img/DB.gif");
-                    }
-                    else if(i==4)
-                    {
-                        image = new Image("file:../img/RB.gif");
-                    }
-
-                    ImageView iv1 = new ImageView();
-                    iv1.setImage(image);
-                    /*iv1.setFitWidth(100);
-                    iv1.setPreserveRatio(true);*/
-
-                    b.setGraphic(iv1);
-                }
-                else if(j==1)
-                {
-                    Image image = new Image("file:../img/PN.gif");
-
-                    ImageView iv1 = new ImageView();
-                    iv1.setImage(image);
-                    /*iv1.setFitWidth(100);
-                    iv1.setPreserveRatio(true);*/
-
-                    b.setGraphic(iv1);
-                }
-                else if(j==6)
-                {
-                    Image image = new Image("file:../img/PB.gif");
-
-                    ImageView iv1 = new ImageView();
-                    iv1.setImage(image);
-                    /*iv1.setFitWidth(100);
-                    iv1.setPreserveRatio(true);*/
-
-                    b.setGraphic(iv1);
-                }
-
-        		gPane.add(b, i, j);
-        	}
-        }
+        affichage(gPane, p);
 
         // gPane.b.setGraphic(iv1);
 
@@ -179,4 +85,50 @@ public class Main extends Application
 
         primaryStage.show();
 	}
+
+    public void affichage(GridPane gPane, Plateau p)
+    {
+        for (int i=0; i<8; i++)
+        {
+            // RowConstraints row = new RowConstraints();
+            // row.setPercentHeight(50);
+            // gPane.getRowConstraints().add(row);
+            for (int j=0; j<8; j++)
+            {
+                ColumnConstraints column = new ColumnConstraints();
+                column.setPercentWidth(100);
+                gPane.getColumnConstraints().add(column);
+
+                Button b = new Button();
+
+                b.setMaxWidth(100);
+                b.setMinWidth(100);
+                b.setMaxHeight(100);
+                b.setMinHeight(100);
+
+                if((i+j)%2==0)
+                {
+                    b.setStyle("-fx-background-color: #ffffff;");
+                }
+                else
+                {
+                    b.setStyle("-fx-background-color: #87591A;");
+                }
+                
+                //.concat(p.getEchiquier(j, i).getPiece().getChemin())
+                //String s = "file:" + p.getEchiquier(j, i).getPiece().getChemin();
+                if(p.getEchiquier(j, i).getPiece() != null)
+                {
+                    Image image = new Image(p.getEchiquier(j, i).getPiece().getChemin());
+                    ImageView iv1 = new ImageView();
+                    iv1.setImage(image);
+                    /*iv1.setFitWidth(100);
+                    iv1.setPreserveRatio(true);*/
+                    b.setGraphic(iv1);
+                }
+
+                gPane.add(b, i, j);
+            }
+        }
+    }
 }

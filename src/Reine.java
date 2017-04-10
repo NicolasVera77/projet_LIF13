@@ -1,8 +1,19 @@
 public class Reine extends Piece
 {
+	private String cheminIMG;
+
 	public Reine(String couleur)
 	{
 		super("Reine", couleur);
+
+		if(couleur == "noir")
+		{
+			this.cheminIMG = "file:../img/DN.gif";
+		}
+		else if(couleur == "blanc")
+		{
+			this.cheminIMG = "file:../img/DB.gif";
+		}
 	}
 
 	public boolean deplacementPossible(Deplacement deplacement)
@@ -22,5 +33,10 @@ public class Reine extends Piece
 		{
 			return false;
 		}
+	}
+
+	public String getChemin()
+	{
+		return this.cheminIMG;
 	}
 }

@@ -28,7 +28,7 @@ public class Deplacement
 		return this.depart;
 	}
 
-	public Point getArrive()
+	public Point getArrivee()
 	{
 		return this.arrivee;
 	}

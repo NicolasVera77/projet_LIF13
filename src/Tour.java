@@ -1,8 +1,19 @@
 public class Tour extends Piece
 {
+	private String cheminIMG;
+
 	public Tour(String couleur)
 	{
 		super("Tour", couleur);
+
+		if(couleur == "noir")
+		{
+			this.cheminIMG = "file:../img/TN.gif";
+		}
+		else if(couleur == "blanc")
+		{
+			this.cheminIMG = "file:../img/TB.gif";
+		}
 	}
 
 	public boolean deplacementPossible(Deplacement deplacement)
@@ -22,5 +33,10 @@ public class Tour extends Piece
 		{
 			return false;
 		}
+	}
+
+	public String getChemin()
+	{
+		return this.cheminIMG;
 	}
 }

@@ -2,9 +2,20 @@ import java.lang.Math;
 
 public class Roi extends Piece
 {
+	private String cheminIMG;
+
 	public Roi(String couleur)
 	{
 		super("Roi", couleur);
+
+		if(couleur == "noir")
+		{
+			this.cheminIMG = "file:../img/RN.gif";
+		}
+		else if(couleur == "blanc")
+		{
+			this.cheminIMG = "file:../img/RB.gif";
+		}
 	}
 
 	public boolean deplacementPossible(Deplacement deplacement)
@@ -24,5 +35,10 @@ public class Roi extends Piece
 		{
 			return false;
 		}
+	}
+
+	public String getChemin()
+	{
+		return this.cheminIMG;
 	}
 }

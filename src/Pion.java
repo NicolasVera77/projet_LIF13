@@ -2,10 +2,21 @@ public class Pion extends Piece
 {
 	private boolean debut;
 
+	private String cheminIMG;
+
 	public Pion(String couleur)
 	{
 		super("Pion", couleur);
 		this.debut = true;
+
+		if(couleur == "noir")
+		{
+			this.cheminIMG = "file:../img/PN.gif";
+		}
+		else if(couleur == "blanc")
+		{
+			this.cheminIMG = "file:../img/PB.gif";
+		}
 	}
 
 	public boolean deplacementPossible(Deplacement deplacement)
@@ -71,5 +82,10 @@ public class Pion extends Piece
 		}
 		
 		return false;
+	}
+
+	public String getChemin()
+	{
+		return this.cheminIMG;
 	}
 }

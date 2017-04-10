@@ -2,9 +2,20 @@ import java.lang.Math;
 
 public class Cavalier extends Piece
 {
+	private String cheminIMG;
+
 	public Cavalier(String couleur)
 	{
 		super("Cavalier", couleur);
+
+		if(couleur == "noir")
+		{
+			this.cheminIMG = "file:../img/CN.gif";
+		}
+		else if(couleur == "blanc")
+		{
+			this.cheminIMG = "file:../img/CB.gif";
+		}
 	}
 
 	public boolean deplacementPossible(Deplacement deplacement)
@@ -24,5 +35,10 @@ public class Cavalier extends Piece
 		{
 			return false;
 		}		
+	}
+
+	public String getChemin()
+	{
+		return this.cheminIMG;
 	}
 }

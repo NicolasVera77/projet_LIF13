@@ -50,10 +50,16 @@ public class Plateau
 
 	public void seDeplacer(Deplacement deplacement)
 	{
-		if(this.echiquier[deplacement.getDepart().getX()][deplacement.getDepart().getY()].getPiece().deplacementPossible(deplacement))
-		{
-			
-		}
+		//if(this.echiquier[deplacement.getDepart().getX()][deplacement.getDepart().getY()].getPiece().deplacementPossible(deplacement))
+		//{
+			this.echiquier[deplacement.getArrivee().getX()][deplacement.getArrivee().getY()].setPiece(this.echiquier[deplacement.getDepart().getX()][deplacement.getDepart().getY()].getPiece());
+			this.echiquier[deplacement.getDepart().getX()][deplacement.getDepart().getY()].setPiece(null);
+		//}
+	}
+
+	public Case getEchiquier(int i, int j)
+	{
+		return this.echiquier[i][j];
 	}
 }
 
