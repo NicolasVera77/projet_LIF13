@@ -28,6 +28,8 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 
+import javafx.scene.Node;
+
 //make clean && make && cd bin && java Main && cd ..
 
 public class Main extends Application
@@ -69,10 +71,19 @@ public class Main extends Application
 
         affichage(gPane, p);
 
-        Deplacement d = new Deplacement(new Point(4, 4), new Point(0,0));
-        p.seDeplacer(d);
-
-        affichage(gPane, p);
+        /*gPane.setOnMouseClicked(new EventHandler<MouseEvent>()
+        {
+            public void handle(MouseEvent me)
+            {
+                event.getSceneX() 
+                //Node source = (Node)me.getSource();
+                Integer colIndex = gPane.getColumnIndex((Node)me.getSource());
+                Integer rowIndex = gPane.getRowIndex((Node)me.getSource());
+                Deplacement d = new Deplacement(new Point(colIndex.intValue(), rowIndex.intValue()), new Point(0,0));
+                p.seDeplacer(d);
+                affichage(gPane, p);
+            }
+        });*/
 
         // gPane.b.setGraphic(iv1);
 
@@ -90,9 +101,6 @@ public class Main extends Application
     {
         for (int i=0; i<8; i++)
         {
-            // RowConstraints row = new RowConstraints();
-            // row.setPercentHeight(50);
-            // gPane.getRowConstraints().add(row);
             for (int j=0; j<8; j++)
             {
                 ColumnConstraints column = new ColumnConstraints();
@@ -115,20 +123,47 @@ public class Main extends Application
                     b.setStyle("-fx-background-color: #87591A;");
                 }
                 
-                //.concat(p.getEchiquier(j, i).getPiece().getChemin())
-                //String s = "file:" + p.getEchiquier(j, i).getPiece().getChemin();
                 if(p.getEchiquier(j, i).getPiece() != null)
                 {
                     Image image = new Image(p.getEchiquier(j, i).getPiece().getChemin());
                     ImageView iv1 = new ImageView();
                     iv1.setImage(image);
-                    /*iv1.setFitWidth(100);
-                    iv1.setPreserveRatio(true);*/
                     b.setGraphic(iv1);
                 }
 
                 gPane.add(b, i, j);
             }
+        }
+
+        for(Node n : gPane.getChildren())
+        {
+            n.setOnMouseClicked(new EventHandler<MouseEvent>()
+            {
+                public void handle(MouseEvent me)
+                {
+                    if(n.getBoundsInParent().contains(me.getSceneX(),me.getSceneY()))
+                    {
+                        
+                        for(Node n2 : gPane.getChildren())
+                        {
+                            n2.setOnMouseClicked(new EventHandler<MouseEvent>()
+                            {
+                                public void handle(MouseEvent me)
+                                {
+                                    if(n2.getBoundsInParent().contains(me.getSceneX(),me.getSceneY()))
+                                    {
+                                        Deplacement d = new Deplacement(new Point(GridPane.getRowIndex(n2), GridPane.getColumnIndex(n2)), new Point(GridPane.getRowIndex(n), GridPane.getColumnIndex(n)));
+                                        p.seDeplacer(d);
+                                        affichage(gPane, p);
+                                    } 
+                                   
+                                }
+                            });
+                        }
+                    } 
+                   
+                }
+            });
         }
     }
 }
