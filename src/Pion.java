@@ -80,8 +80,6 @@ public class Pion extends Piece
 		{
 			return false;
 		}
-		
-		return false;
 	}
 
 	public String getChemin()
