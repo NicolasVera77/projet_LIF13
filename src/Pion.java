@@ -25,12 +25,12 @@ public class Pion extends Piece
 		{
 			if(this.getCouleur() == "blanc")
 			{
-				if(deplacement.getDepart().getX()==6 && this.debut == true)
+				if(deplacement.getDepart().getX() == 6 && this.debut == true)
 				{
 					if((deplacement.getDeplacementX() == 0) && (deplacement.getDeplacementY() == -1 || deplacement.getDeplacementY() == -2))
 					{
 						this.debut = false;
-						return true;						
+						return true;					
 					}
 					else 
 					{
@@ -51,7 +51,7 @@ public class Pion extends Piece
 			}
 			else if(this.getCouleur() == "noir")
 			{
-				if(deplacement.getDepart().getX()==1 && this.debut == true)
+				if(deplacement.getDepart().getX() == 1 && this.debut == true)
 				{
 					if((deplacement.getDeplacementX() == 0) && (deplacement.getDeplacementY() <= 2))
 					{
