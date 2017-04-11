@@ -18,10 +18,12 @@ public class Fou extends Piece
 		}
 	}
 
+	// Déplacement en diagonale
 	public boolean deplacementPossible(Deplacement deplacement)
 	{
 		if(!deplacement.estNul())
 		{
+			// Si le déplacement vertical est égale au déplacement horizontal
 			if(Math.abs(deplacement.getDeplacementX()) == Math.abs(deplacement.getDeplacementY()))
 			{
 				return true;			
