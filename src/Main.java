@@ -157,8 +157,7 @@ public class Main extends Application
                                         Deplacement d = new Deplacement(new Point(GridPane.getRowIndex(n2), GridPane.getColumnIndex(n2)), new Point(GridPane.getRowIndex(n), GridPane.getColumnIndex(n)));
                                         p.seDeplacer(d);
                                         affichage(gPane, p);
-                                    } 
-                                   
+                                    }
                                 }
                             });
                         }

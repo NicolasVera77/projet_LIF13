@@ -51,9 +51,4 @@ public abstract class Piece
 	public abstract boolean deplacementPossible(Deplacement deplacement);
 
 	public abstract String getChemin();
-
-	public String getCheminDefaut()
-	{
-		return "../img/FN.gif";
-	}
 }

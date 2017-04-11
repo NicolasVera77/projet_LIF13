@@ -52,8 +52,11 @@ public class Plateau
 	{
 		if(this.getEchiquier(deplacement.getDepart().getX(), deplacement.getDepart().getY()).getPiece().deplacementPossible(deplacement))
 		{
-			this.echiquier[deplacement.getArrivee().getX()][deplacement.getArrivee().getY()].setPiece(this.echiquier[deplacement.getDepart().getX()][deplacement.getDepart().getY()].getPiece());
-			this.echiquier[deplacement.getDepart().getX()][deplacement.getDepart().getY()].setPiece(null);
+			if((this.getEchiquier(deplacement.getArrivee().getX(), deplacement.getArrivee().getY()).getPiece() == null) || (this.getEchiquier(deplacement.getDepart().getX(), deplacement.getDepart().getY()).getPiece().getCouleur() != this.getEchiquier(deplacement.getArrivee().getX(), deplacement.getArrivee().getY()).getPiece().getCouleur()))
+			{
+				this.echiquier[deplacement.getArrivee().getX()][deplacement.getArrivee().getY()].setPiece(this.echiquier[deplacement.getDepart().getX()][deplacement.getDepart().getY()].getPiece());
+				this.echiquier[deplacement.getDepart().getX()][deplacement.getDepart().getY()].setPiece(null);
+			}
 		}
 	}
 
