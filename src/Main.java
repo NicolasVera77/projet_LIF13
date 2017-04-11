@@ -127,7 +127,7 @@ public class Main extends Application
                 {
                     if(n.getBoundsInParent().contains(me.getSceneX(),me.getSceneY()))
                     {
-                        if(p.getEchiquier(GridPane.getRowIndex(n), GridPane.getColumnIndex(n)).estOccupe())
+                        if(p.getEchiquier(GridPane.getRowIndex(n), GridPane.getColumnIndex(n)).estOccupee())
                         {
                             n.setStyle("-fx-border-color: #FF0000");
 

@@ -23,7 +23,7 @@ public class Case
 	}
 
 	// Renvoie vrai si la case est occupée par une pièce, faux sinon 
-	public boolean estOccupe()
+	public boolean estOccupee()
 	{
 		if(this.piece != null)
 		{
@@ -36,7 +36,7 @@ public class Case
 	}
 
 	// Renvoie vrai si la case est occupée par une pièce de la couleur passée en paramètre, faux sinon
-	public boolean estOccuper(String couleur)
+	public boolean estOccupee(String couleur)
 	{
 		if(this.piece == null)
 		{
