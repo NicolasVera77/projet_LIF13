@@ -7,10 +7,8 @@ bin = ./bin
 	$(CC) -d $(bin) $(objets) src/*.java
 
 CLASSES = \
-		src/Coup.java \
 		src/Point.java \
 		src/Joueur.java \
-		src/Partie.java \
 		src/Plateau.java \
 		src/Case.java \
 		src/Piece.java \
