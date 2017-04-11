@@ -18,10 +18,12 @@ public class Cavalier extends Piece
 		}
 	}
 
+	// Déplacement en L
 	public boolean deplacementPossible(Deplacement deplacement)
 	{
 		if(!deplacement.estNul())
 		{
+			// Si le déplacement horizontal est le double du déplacement vertical OU inversement
 			if((Math.abs(deplacement.getDeplacementX()) == 1 && Math.abs(deplacement.getDeplacementY())==2) || (Math.abs(deplacement.getDeplacementX()) == 2 && Math.abs(deplacement.getDeplacementY())==1))
 			{
 				return true;			
