@@ -71,22 +71,6 @@ public class Main extends Application
 
         affichage(gPane, p);
 
-        /*gPane.setOnMouseClicked(new EventHandler<MouseEvent>()
-        {
-            public void handle(MouseEvent me)
-            {
-                event.getSceneX() 
-                //Node source = (Node)me.getSource();
-                Integer colIndex = gPane.getColumnIndex((Node)me.getSource());
-                Integer rowIndex = gPane.getRowIndex((Node)me.getSource());
-                Deplacement d = new Deplacement(new Point(colIndex.intValue(), rowIndex.intValue()), new Point(0,0));
-                p.seDeplacer(d);
-                affichage(gPane, p);
-            }
-        });*/
-
-        // gPane.b.setGraphic(iv1);
-
         gPane.setPrefSize(WINDOW_WIDTH, WINDOW_HEIGHT);
         gPane.setMinSize(Region.USE_COMPUTED_SIZE, Region.USE_COMPUTED_SIZE);
 
@@ -143,26 +127,27 @@ public class Main extends Application
                 {
                     if(n.getBoundsInParent().contains(me.getSceneX(),me.getSceneY()))
                     {
-                        n.setStyle("-fx-border-color: #FF0000");
-                        //gPane[GridPane.getRowIndex(n)][GridPane.getColumnIndex(n)].setStyle("-fx-border-color: #444444");
-
-                        for(Node n2 : gPane.getChildren())
+                        if(p.getEchiquier(GridPane.getRowIndex(n), GridPane.getColumnIndex(n)).estOccupe())
                         {
-                            n2.setOnMouseClicked(new EventHandler<MouseEvent>()
+                            n.setStyle("-fx-border-color: #FF0000");
+
+                            for(Node n2 : gPane.getChildren())
                             {
-                                public void handle(MouseEvent me)
+                                n2.setOnMouseClicked(new EventHandler<MouseEvent>()
                                 {
-                                    if(n2.getBoundsInParent().contains(me.getSceneX(),me.getSceneY()))
+                                    public void handle(MouseEvent me)
                                     {
-                                        Deplacement d = new Deplacement(new Point(GridPane.getRowIndex(n2), GridPane.getColumnIndex(n2)), new Point(GridPane.getRowIndex(n), GridPane.getColumnIndex(n)));
-                                        p.seDeplacer(d);
-                                        affichage(gPane, p);
+                                        if(n2.getBoundsInParent().contains(me.getSceneX(),me.getSceneY()))
+                                        {
+                                            Deplacement d = new Deplacement(new Point(GridPane.getRowIndex(n2), GridPane.getColumnIndex(n2)), new Point(GridPane.getRowIndex(n), GridPane.getColumnIndex(n)));
+                                            p.seDeplacer(d);
+                                            affichage(gPane, p);
+                                        }
                                     }
-                                }
-                            });
+                                });
+                            }
                         }
-                    } 
-                   
+                    }   
                 }
             });
         }

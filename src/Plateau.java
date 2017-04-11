@@ -16,7 +16,6 @@ public class Plateau
 			}
 		}
 	}
-
 	public void initialisation()
 	{
 		for(int i=0; i<COLONNE; i++)
@@ -59,6 +58,40 @@ public class Plateau
 			}
 		}
 	}
+
+	/*public boolean manger(Deplacement deplacement)
+	{
+		int x=0;
+		boolean tmp = true;
+		if(deplacement.getDeplacementX()<0)
+		{
+			x = -1;
+		}
+		else
+		{
+			x = 1;
+		}
+		for(int i=deplacement.getDepart().getX(); i>=(x)*deplacement.getArrivee().getX(); i=i+x)
+		{
+			for(int j=deplacement.getDepart().getY(); j>=(x)*deplacement.getArrivee().getY(); j=j+x)
+			{
+				if(this.getEchiquier(i, j).getPiece().getCouleur() != this.getEchiquier(deplacement.getDepart().getX(), deplacement.getDepart().getY()).getPiece().getCouleur())
+				{
+					this.getEchiquier(i, j).setPiece(null);
+				}
+				else if(!this.getEchiquier(i, j).estOccupe())
+				{
+					tmp = true;
+				}
+				else
+				{			
+					tmp = false;
+				}
+			}
+		}
+		return tmp;
+		//this.getEchiquier(deplacement.getDepart().getX(), deplacement.getDepart().getY()).getPiece()
+	}*/
 
 	public Case getEchiquier(int i, int j)
 	{
